@@ -7,6 +7,7 @@
   <title>Gourab Saha</title>
   <link rel="icon" href="gourab.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f0f8ff;
@@ -36,16 +37,16 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
+      background: linear-gradient(270deg, #e0f7fa, #fce4ec, #f3e5f5);
+      background-size: 600% 600%;
+      animation: gradientBG 20s ease infinite;
       color: var(--text);
-      transition: background-color 0.5s, color 0.5s;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      transition: all 0.4s ease;
     }
 
     header {
@@ -54,33 +55,6 @@
       padding: 20px;
       text-align: center;
       position: relative;
-      transition: background 0.5s;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .typewriter {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid white;
-      animation: typing 3s steps(20) 1s 1 normal both, blink 0.75s step-end infinite;
-      font-size: 28px;
-      font-weight: 600;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent }
     }
 
     .toggle-btn {
@@ -94,19 +68,17 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
 
     .toggle-btn:hover {
       background: rgba(255,255,255,0.2);
-      transform: scale(1.05);
     }
 
     nav {
       background: var(--nav-bg);
       padding: 10px 0;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: background 0.5s;
     }
 
     nav ul {
@@ -128,33 +100,7 @@
     }
 
     main {
-      flex: 1;
       padding: 40px 20px;
-      background: var(--bg);
-      transition: background 0.5s;
-    }
-
-    section {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    section:nth-child(1) {
-      animation-delay: 0.3s;
-    }
-    section:nth-child(2) {
-      animation-delay: 0.6s;
-    }
-    section:nth-child(3) {
-      animation-delay: 0.9s;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .profile-section-1 {
@@ -172,17 +118,20 @@
       object-fit: cover;
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      animation: zoomIn 1.5s ease;
     }
 
-    @keyframes zoomIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    .profile-details {
+      font-size: 18px;
+      font-weight: 600;
+      height: 30px;
+      margin-top: 10px;
+      animation: fadeIn 1s ease-in-out;
+      min-height: 30px;
     }
 
-    .profile-details p {
-      font-size: 16px;
-      margin: 6px 0;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     section h2 {
@@ -210,23 +159,14 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 25px;
-      transition: background 0.3s, transform 0.3s;
+      transition: all 0.3s;
       font-weight: bold;
-      animation: bounce 2s infinite;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .button:hover {
       background: var(--button-hover);
-      transform: scale(1.1);
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
+      transform: scale(1.05);
     }
 
     footer {
@@ -234,7 +174,7 @@
       color: white;
       text-align: center;
       padding: 15px;
-      transition: background 0.5s;
+      margin-top: 40px;
     }
 
     a {
@@ -244,14 +184,19 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <button class="toggle-btn" id="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
-    <div class="header-content">
-      <div class="typewriter">Welcome to My Website</div>
-    </div>
+    <button class="toggle-btn" id="toggleBtn" onclick="toggleTheme()">Dark Mode</button>
+    <div class="typewriter-text" style="font-size:28px; font-weight:600;">Welcome to My Website</div>
     <nav>
       <ul>
         <li><a href="works.html">Knowledge</a></li>
@@ -264,11 +209,7 @@
   <main>
     <section class="profile-section-1">
       <img src="gourab.png" alt="Profile Image" class="profile-image">
-      <div class="profile-details">
-        <p>Name: Gourab Saha</p>
-        <p>DOB: 14 Jan 2012</p>
-        <p>Father's Name: Gour Sundar Saha</p>
-      </div>
+      <div class="profile-details" id="typewriter"></div>
     </section>
 
     <section>
@@ -291,20 +232,65 @@
     <p>&copy; 2024 Gourab Saha. All rights reserved.</p>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById("theme-toggle");
+  <audio id="typeSound" src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
 
+  <script>
+    // Dark Mode toggle
     if (localStorage.getItem("mode") === "dark") {
       document.body.classList.add("dark");
-      toggleBtn.textContent = "Light Mode";
+      document.getElementById('toggleBtn').innerText = "Light Mode";
     }
 
     function toggleTheme() {
       document.body.classList.toggle("dark");
       const isDark = document.body.classList.contains("dark");
       localStorage.setItem("mode", isDark ? "dark" : "light");
-      toggleBtn.textContent = isDark ? "Light Mode" : "Dark Mode";
+      document.getElementById('toggleBtn').innerText = isDark ? "Light Mode" : "Dark Mode";
     }
+
+    // Typewriter animation
+    const texts = [
+      "Name: Gourab Saha",
+      "DOB: 14 Jan 2012",
+      "Father's Name: Gour Sundar Saha",
+      "Want to see more?"
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+    const sound = document.getElementById("typeSound");
+
+    (function type(){
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById('typewriter').innerHTML = letter;
+      document.getElementById('typewriter').style.opacity = 1;
+      
+      if(letter.length > 1) {
+        sound.currentTime = 0;
+        sound.play();
+      }
+
+      if(letter.length === currentText.length){
+        setTimeout(() => {
+          document.getElementById('typewriter').style.opacity = 0;
+          setTimeout(() => {
+            index = 0;
+            count++;
+            type();
+          }, 500);
+        }, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    }());
   </script>
+
 </body>
 </html>
