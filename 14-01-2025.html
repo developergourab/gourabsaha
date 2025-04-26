@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My 13th Birthday - 14-01-2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fce4ec;
+      --text-color: #333;
+      --accent: #ff4081;
+      --button-color: #ff4081;
+      --button-hover: #d81b60;
+      --footer-bg: #c2185b;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8bbd0, #e1bee7, #b3e5fc);
+      background-size: 400% 400%;
+      animation: bgFlow 15s ease infinite;
+      color: var(--text-color);
+    }
+
+    @keyframes bgFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: var(--button-color);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    My 13th Birthday
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Gourab Saha</h2>
+    <p>Celebrating my 13th birthday today! 🎉</p>
+
+    <h2>Reflecting on 13 Years</h2>
+    <p>Today marks a special milestone as I celebrate my 13th birthday. It’s incredible to think about all the experiences and memories I've gathered over the past 13 years. From the first steps to this moment, every year has brought its own unique challenges and joys.</p>
+
+    <h2>Looking Ahead</h2>
+    <p>As I look forward to the future, I'm filled with excitement about the possibilities that lie ahead. Whether it’s new learning experiences, adventures, or simply more time spent with loved ones, I can’t wait to see what this year brings.</p>
+
+    <h2>Message for All</h2>
+    <p>Thank you for your support and encouragement. Please keep me in your thoughts as I strive to grow and achieve my goals. I appreciate all of you.</p>
+
+    <a href="blog.html" class="button">Touch For Back</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Gourab Saha. All rights reserved.</p>
+  </footer>
+</body>
+</html>

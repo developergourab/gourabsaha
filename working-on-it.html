@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Working On It - Gourab Saha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #e1f5fe;
+      --text: #222;
+      --accent: #00796b;
+      --button-bg: #00796b;
+      --button-hover: #004d40;
+      --footer-bg: #004d40;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e1f5fe, #fce4ec, #fff3e0);
+      background-size: 400% 400%;
+      animation: gradientFlow 12s ease infinite;
+      color: var(--text);
+      transition: background 0.5s ease;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .working-image {
+      max-width: 100%;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: var(--button-bg);
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      background-color: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Working On It
+  </header>
+  <main>
+    <section class="card">
+      <h2>I am Working On It!</h2>
+      <img src="IMG_3334.jpeg" alt="Working On It" class="working-image" />
+      <p>Thank you for your patience. I’m currently working on this feature and will have it ready soon. Stay tuned!</p>
+      <a href="index.html" class="button">Return to Home</a>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Gourab Saha. All rights reserved.</p>
+  </footer>
+</body>
+</html>
