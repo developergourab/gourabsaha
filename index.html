@@ -40,11 +40,12 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(270deg, #e0f7fa, #fce4ec, #f3e5f5);
-      background-size: 600% 600%;
-      animation: gradientBG 20s ease infinite;
+      background-color: var(--bg);
       color: var(--text);
-      transition: all 0.4s ease;
+      transition: background-color 0.5s, color 0.5s;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -53,13 +54,14 @@
       padding: 20px;
       text-align: center;
       position: relative;
+      transition: background 0.5s;
     }
 
     .header-content {
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      margin-bottom: 10px;
     }
 
     .typewriter {
@@ -81,12 +83,6 @@
       50% { border-color: transparent }
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50% }
-      50% { background-position: 100% 50% }
-      100% { background-position: 0% 50% }
-    }
-
     .toggle-btn {
       position: absolute;
       right: 20px;
@@ -98,17 +94,19 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
 
     .toggle-btn:hover {
       background: rgba(255,255,255,0.2);
+      transform: scale(1.05);
     }
 
     nav {
       background: var(--nav-bg);
       padding: 10px 0;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.5s;
     }
 
     nav ul {
@@ -130,7 +128,33 @@
     }
 
     main {
+      flex: 1;
       padding: 40px 20px;
+      background: var(--bg);
+      transition: background 0.5s;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    section:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+    section:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+    section:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .profile-section-1 {
@@ -148,6 +172,12 @@
       object-fit: cover;
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: zoomIn 1.5s ease;
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     .profile-details p {
@@ -180,13 +210,23 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 25px;
-      transition: all 0.3s;
+      transition: background 0.3s, transform 0.3s;
       font-weight: bold;
+      animation: bounce 2s infinite;
     }
 
     .button:hover {
       background: var(--button-hover);
-      transform: scale(1.05);
+      transform: scale(1.1);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     footer {
@@ -194,7 +234,7 @@
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 40px;
+      transition: background 0.5s;
     }
 
     a {
@@ -254,12 +294,9 @@
   <script>
     const toggleBtn = document.getElementById("theme-toggle");
 
-    // Load dark mode from localStorage
     if (localStorage.getItem("mode") === "dark") {
       document.body.classList.add("dark");
       toggleBtn.textContent = "Light Mode";
-    } else {
-      toggleBtn.textContent = "Dark Mode";
     }
 
     function toggleTheme() {
